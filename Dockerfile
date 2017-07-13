@@ -4,7 +4,7 @@ MAINTAINER Wang Lilong <wanglilong007@gmail.com>
 ENV SSH_VERSION 7.4p1
 ENV SSH_DOWNLOAD_URL http://download.redis.io/releases/redis-3.2.9.tar.gz
 ENV SSH_DOWNLOAD_SHA 6eaacfa983b287e440d0839ead20c2231749d5d6b78bbe0e0ffa3a890c59ff26
-apk search -v openssh
+RUN apk search -v openssh
 # add openssh and clean
 RUN apk add --update 'openssh=7.5_p1-r1' \
 && rm  -rf /tmp/* /var/cache/apk/*
