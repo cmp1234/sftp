@@ -20,7 +20,6 @@ RUN set -ex; \
 		zlib \
 		zlib-dev
 	; \
-	
 	\
 	/build_openssh.sh; \
 	\
