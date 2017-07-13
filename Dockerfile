@@ -22,7 +22,7 @@ RUN set -ex; \
 		openssl-dev \
 	; \
 	apk add --no-cache --virtual .run-deps \
-		libcrypto \
+		libcrypto1.0 \
 	; \
 	\
 	/build_openssh.sh; \
