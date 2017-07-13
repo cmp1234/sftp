@@ -7,7 +7,7 @@ ENV SSH_DOWNLOAD_URL http://mirrors.sonic.net/pub/OpenBSD/OpenSSH/portable/opens
 
 	
 COPY build_openssh.sh /build_openssh.sh 
-RUN chmod +u /build_openssh.sh
+RUN chmod +x /build_openssh.sh
 
 RUN set -ex; \
 	\
