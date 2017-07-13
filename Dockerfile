@@ -18,6 +18,8 @@ RUN set -ex; \
 		musl-dev \
 		zlib \
 		zlib-dev \
+		openssl \
+		openssl-dev \
 	; \
 	\
 	/build_openssh.sh; \
