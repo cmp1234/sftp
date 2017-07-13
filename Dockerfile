@@ -21,6 +21,9 @@ RUN set -ex; \
 		openssl \
 		openssl-dev \
 	; \
+	apk add --no-cache --virtual .run-deps \
+		libcrypto \
+	; \
 	\
 	/build_openssh.sh; \
 	\
@@ -33,6 +36,7 @@ RUN set -ex; \
 #&& rm  -rf /tmp/* /var/cache/apk/*
 # add entrypoint script
 ADD docker-entrypoint.sh /usr/local/bin
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 EXPOSE 22
 ENTRYPOINT ["docker-entrypoint.sh"]
