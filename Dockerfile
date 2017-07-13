@@ -6,7 +6,7 @@ ENV SSH_DOWNLOAD_URL http://download.redis.io/releases/redis-3.2.9.tar.gz
 ENV SSH_DOWNLOAD_SHA 6eaacfa983b287e440d0839ead20c2231749d5d6b78bbe0e0ffa3a890c59ff26
 
 # add openssh and clean
-RUN apk add --update openssh \
+RUN apk add --update 'openssh=7.4_p1' \
 && rm  -rf /tmp/* /var/cache/apk/*
 # add entrypoint script
 ADD docker-entrypoint.sh /usr/local/bin
