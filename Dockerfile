@@ -5,7 +5,6 @@ ENV SSH_VERSION 7.4p1
 ENV SSH_DOWNLOAD_URL http://mirrors.sonic.net/pub/OpenBSD/OpenSSH/portable/openssh-7.4p1.tar.gz
 #ENV SSH_DOWNLOAD_SHA 6eaacfa983b287e440d0839ead20c2231749d5d6b78bbe0e0ffa3a890c59ff26
 
-	
 COPY build_openssh.sh /build_openssh.sh 
 RUN chmod +x /build_openssh.sh
 
