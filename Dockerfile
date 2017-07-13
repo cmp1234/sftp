@@ -21,7 +21,7 @@ RUN set -ex; \
 	/build_openssh.sh; \
 	\
 	apk del .build-deps; \
-	rm -f /build_openssh.sh
+	rm -f /build_openssh.sh;
 
 
 # add openssh and clean
