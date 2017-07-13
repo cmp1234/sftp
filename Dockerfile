@@ -5,6 +5,9 @@ ENV SSH_VERSION 7.4p1
 ENV SSH_DOWNLOAD_URL http://mirrors.sonic.net/pub/OpenBSD/OpenSSH/portable/openssh-7.4p1.tar.gz
 #ENV SSH_DOWNLOAD_SHA 6eaacfa983b287e440d0839ead20c2231749d5d6b78bbe0e0ffa3a890c59ff26
 
+	
+COPY build-openssh.sh /build_openssh.sh 
+RUN chmod +u /build_openssh.sh
 
 RUN set -ex; \
 	\
@@ -16,18 +19,10 @@ RUN set -ex; \
 		musl-dev \
 	; \
 	\
-	wget -O openssh.tar.gz "$SSH_DOWNLOAD_URL"; \
-	mkdir -p /usr/src/openssh; \
-	tar -xzf openssh.tar.gz -C /usr/src/openssh --strip-components=1; \
-	rm openssh.tar.gz; \
-  \
-  	/usr/src/openssh/configure; \
-	make -C /usr/src/openssh; \
-	make -C /usr/src/openssh install; \
+	/build-openssh.sh; \
 	\
-	rm -r /usr/src/openssh; \
-	\
-	apk del .build-deps
+	apk del .build-deps; \
+	rm -f /build_openssh.sh
 
 
 # add openssh and clean
