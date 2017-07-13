@@ -21,7 +21,8 @@ RUN set -ex; \
 	tar -xzf openssh.tar.gz -C /usr/src/openssh --strip-components=1; \
 	rm openssh.tar.gz; \
   \
-	make -C /usr/src/openssh -j "$(nproc)"; \
+  	/usr/src/openssh/configure; \
+	make -C /usr/src/openssh; \
 	make -C /usr/src/openssh install; \
 	\
 	rm -r /usr/src/openssh; \
