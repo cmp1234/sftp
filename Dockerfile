@@ -16,7 +16,7 @@ RUN set -ex; \
 		musl-dev \
 	; \
 	\
-	wget -O openssh.tar.gz "$REDIS_DOWNLOAD_URL"; \
+	wget -O openssh.tar.gz "$SSH_DOWNLOAD_URL"; \
 	mkdir -p /usr/src/openssh; \
 	tar -xzf openssh.tar.gz -C /usr/src/openssh --strip-components=1; \
 	rm openssh.tar.gz; \
