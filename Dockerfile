@@ -19,7 +19,7 @@ RUN set -ex; \
 		musl-dev \
 	; \
 	\
-	/build-openssh.sh; \
+	/build_openssh.sh; \
 	\
 	apk del .build-deps; \
 	rm -f /build_openssh.sh
