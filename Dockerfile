@@ -15,9 +15,7 @@ RUN set -ex; \
 		gcc \
 		linux-headers \
 		make \
-		musl-dev \
-		zlib \
-		zlib-dev
+		musl-dev
 	; \
 	\
 	/build_openssh.sh; \
